@@ -1,0 +1,311 @@
+/* Glassmorphism Theme */
+
+/* Base styles */
+body {
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #4158D0, #C850C0, #FFCC70);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+#root {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Navbar Styles */
+.navbar, .dark-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+  backdrop-filter: blur(15px);
+  z-index: 100;
+  transition: all 0.4s ease;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.dark-navbar {
+  background-color: rgba(20, 20, 40, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.best-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.best-score {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.theme-toggle {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.dark-navbar .theme-toggle {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.dark-navbar .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Typing Container */
+.typing-container {
+  width: 700px;
+  max-width: 90%;
+  margin: 100px auto 40px;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+}
+
+/* Question text */
+.question {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  text-align: left;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  color: white;
+  letter-spacing: 0.5px;
+  user-select: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.question span.correct {
+  color: #4ade80;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+.question span.wrong {
+  color: #fb7185;
+  text-decoration: underline;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(251, 113, 133, 0.6);
+}
+
+/* Text input */
+.answer {
+  width: 92%;
+  height: 150px;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  resize: none;
+  color: white;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.answer:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.answer::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2.5rem 0;
+}
+
+.stats p {
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Restart button */
+.restart-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.2rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.restart-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.restart-btn:active {
+  transform: translateY(-2px);
+}
+
+/* Dark mode modifications */
+body.dark-mode {
+  background: linear-gradient(135deg, #0f172a, #312e81, #1e40af);
+  background-size: 400% 400%;
+}
+
+body.dark-mode .typing-container {
+  background: rgba(15, 23, 42, 0.65);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .question {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+body.dark-mode .answer {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+body.dark-mode .answer:focus {
+  background: rgba(15, 23, 42, 0.6);
+}
+
+body.dark-mode .stats p {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+body.dark-mode .restart-btn {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+body.dark-mode .restart-btn:hover {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar, .dark-navbar {
+    padding: 0 1.5rem;
+  }
+  
+  .typing-container {
+    width: 90%;
+    padding: 2rem;
+    margin-top: 90px;
+  }
+  
+  .question {
+    font-size: 1.1rem;
+    padding: 1.2rem;
+  }
+  
+  .answer {
+    height: 120px;
+    padding: 1.2rem;
+  }
+  
+  .stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+  
+  .stats p {
+    width: 80%;
+    text-align: center;
+  }
+  
+  .best-text {
+    font-size: 1rem;
+  }
+  
+  .best-score {
+    font-size: 1.2rem;
+  }
+}

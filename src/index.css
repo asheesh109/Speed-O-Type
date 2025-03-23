@@ -1,0 +1,406 @@
+/* Premium Neumorphic Theme */
+/* Base styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+:root {
+  --bg-light: #e0e5ec;
+  --text-light: #2d3748;
+  --shadow-light-1: #ffffff;
+  --shadow-light-2: #a3b1c6;
+  --accent-light: #4f46e5;
+  
+  --bg-dark: #1e1e2e;
+  --text-dark: #e2e8f0;
+  --shadow-dark-1: #2a2a3c;
+  --shadow-dark-2: #16161e;
+  --accent-dark: #818cf8;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+#root {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+/* Navbar Styles */
+.navbar, .dark-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+.navbar {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  box-shadow: 8px 8px 16px var(--shadow-light-2), 
+              -8px -8px 16px var(--shadow-light-1);
+}
+.dark-navbar {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  box-shadow: 8px 8px 16px var(--shadow-dark-2), 
+              -8px -8px 16px var(--shadow-dark-1);
+}
+h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+h1 svg {
+  font-size: 2.6rem;
+}
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+.best-text {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.best-score {
+  color: var(--accent-light);
+  font-weight: 800;
+  font-size: 1.6rem;
+  position: relative;
+  padding: 0 5px;
+}
+.best-score::after {
+  content: '';
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: var(--accent-light);
+  bottom: -4px;
+  left: 0;
+  border-radius: 2px;
+}
+.dark-navbar .best-score {
+  color: var(--accent-dark);
+}
+.dark-navbar .best-score::after {
+  background: var(--accent-dark);
+}
+.theme-toggle {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.7rem;
+  transition: all 0.3s ease;
+  border: none;
+  background: var(--bg-light);
+  color: var(--text-light);
+  box-shadow: 5px 5px 10px var(--shadow-light-2),
+              -5px -5px 10px var(--shadow-light-1);
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+}
+
+.theme-toggle:active {
+  box-shadow: inset 3px 3px 6px var(--shadow-light-2),
+              inset -3px -3px 6px var(--shadow-light-1);
+}
+
+.dark-navbar .theme-toggle {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  box-shadow: 5px 5px 10px var(--shadow-dark-2),
+              -5px -5px 10px var(--shadow-dark-1);
+}
+
+.dark-navbar .theme-toggle:active {
+  box-shadow: inset 3px 3px 6px var(--shadow-dark-2),
+              inset -3px -3px 6px var(--shadow-dark-1);
+}
+
+/* Main container */
+.container {
+  margin-top: 120px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Card styles */
+.card {
+  background-color: var(--bg-light);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 10px 10px 20px var(--shadow-light-2),
+              -10px -10px 20px var(--shadow-light-1);
+}
+
+.dark-mode .card {
+  background-color: var(--bg-dark);
+  box-shadow: 10px 10px 20px var(--shadow-dark-2),
+              -10px -10px 20px var(--shadow-dark-1);
+}
+
+/* Button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  background: var(--bg-light);
+  color: var(--text-light);
+  box-shadow: 5px 5px 10px var(--shadow-light-2),
+              -5px -5px 10px var(--shadow-light-1);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  box-shadow: inset 3px 3px 6px var(--shadow-light-2),
+              inset -3px -3px 6px var(--shadow-light-1);
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--accent-light);
+  color: white;
+}
+
+.dark-mode .btn {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  box-shadow: 5px 5px 10px var(--shadow-dark-2),
+              -5px -5px 10px var(--shadow-dark-1);
+}
+
+.dark-mode .btn:active {
+  box-shadow: inset 3px 3px 6px var(--shadow-dark-2),
+              inset -3px -3px 6px var(--shadow-dark-1);
+}
+
+.dark-mode .btn-primary {
+  background: var(--accent-dark);
+}
+
+/* Input styles */
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.input-field {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  background: var(--bg-light);
+  color: var(--text-light);
+  box-shadow: inset 3px 3px 6px var(--shadow-light-2),
+              inset -3px -3px 6px var(--shadow-light-1);
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  box-shadow: inset 4px 4px 8px var(--shadow-light-2),
+              inset -4px -4px 8px var(--shadow-light-1);
+}
+
+.dark-mode .input-field {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  box-shadow: inset 3px 3px 6px var(--shadow-dark-2),
+              inset -3px -3px 6px var(--shadow-dark-1);
+}
+
+.dark-mode .input-field:focus {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark-2),
+              inset -4px -4px 8px var(--shadow-dark-1);
+}
+
+/* Game board */
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.game-tile {
+  aspect-ratio: 1/1;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--bg-light);
+  color: var(--text-light);
+  box-shadow: 8px 8px 16px var(--shadow-light-2),
+              -8px -8px 16px var(--shadow-light-1);
+}
+
+.game-tile:hover {
+  transform: translateY(-3px);
+}
+
+.game-tile:active, .game-tile.active {
+  box-shadow: inset 4px 4px 8px var(--shadow-light-2),
+              inset -4px -4px 8px var(--shadow-light-1);
+  transform: translateY(0);
+}
+
+.dark-mode .game-tile {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  box-shadow: 8px 8px 16px var(--shadow-dark-2),
+              -8px -8px 16px var(--shadow-dark-1);
+}
+
+.dark-mode .game-tile:active, .dark-mode .game-tile.active {
+  box-shadow: inset 4px 4px 8px var(--shadow-dark-2),
+              inset -4px -4px 8px var(--shadow-dark-1);
+}
+
+/* Dark mode */
+.dark-mode {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .navbar, .dark-navbar {
+    padding: 0 1.5rem;
+    height: 70px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h1 svg {
+    font-size: 2rem;
+  }
+  
+  .best-text {
+    font-size: 1rem;
+  }
+  
+  .best-score {
+    font-size: 1.2rem;
+  }
+  
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+  
+  .container {
+    margin-top: 90px;
+    padding: 1.5rem;
+  }
+  
+  .game-board {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar, .dark-navbar {
+    padding: 0 1rem;
+    height: 60px;
+  }
+  
+  .nav-right {
+    gap: 1.5rem;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .best-text {
+    display: none;
+  }
+  
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .container {
+    margin-top: 80px;
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 1.5s infinite;
+}
